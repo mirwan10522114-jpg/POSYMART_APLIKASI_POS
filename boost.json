@@ -1,0 +1,15 @@
+{
+    "agents": [
+        "antigravity"
+    ],
+    "cloud": true,
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch": false,
+    "sail": false,
+    "skills": [
+        "deploying-to-cloud",
+        "laravel-best-practices",
+        "tailwindcss-development"
+    ]
+}

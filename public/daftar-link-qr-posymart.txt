@@ -1,0 +1,70 @@
+=== DAFTAR LINK QR CODE PEMESANAN MEJA POSYMART (1 - 50) ===
+
+Area:
+• Meja 01 - 20 : Indoor Utama
+• Meja 21 - 35 : Outdoor Garden
+• Meja 36 - 50 : Lantai 2 Mezzanine
+
+============================================================
+1. URL UNTUK SCAN DARI HP / SMARTPHONE (WI-FI LOKAL):
+============================================================
+Meja 01 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-01
+Meja 02 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-02
+Meja 03 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-03
+Meja 04 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-04
+Meja 05 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-05
+Meja 06 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-06
+Meja 07 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-07
+Meja 08 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-08
+Meja 09 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-09
+Meja 10 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-10
+Meja 11 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-11
+Meja 12 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-12
+Meja 13 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-13
+Meja 14 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-14
+Meja 15 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-15
+Meja 16 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-16
+Meja 17 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-17
+Meja 18 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-18
+Meja 19 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-19
+Meja 20 (Indoor Utama)     : http://172.20.10.2:8000/m/qr-meja-20
+
+Meja 21 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-21
+Meja 22 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-22
+Meja 23 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-23
+Meja 24 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-24
+Meja 25 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-25
+Meja 26 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-26
+Meja 27 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-27
+Meja 28 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-28
+Meja 29 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-29
+Meja 30 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-30
+Meja 31 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-31
+Meja 32 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-32
+Meja 33 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-33
+Meja 34 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-34
+Meja 35 (Outdoor Garden)   : http://172.20.10.2:8000/m/qr-meja-35
+
+Meja 36 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-36
+Meja 37 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-37
+Meja 38 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-38
+Meja 39 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-39
+Meja 40 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-40
+Meja 41 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-41
+Meja 42 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-42
+Meja 43 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-43
+Meja 44 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-44
+Meja 45 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-45
+Meja 46 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-46
+Meja 47 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-47
+Meja 48 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-48
+Meja 49 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-49
+Meja 50 (Lantai 2 Mezzanine): http://172.20.10.2:8000/m/qr-meja-50
+
+============================================================
+2. URL UNTUK BROWSER KOMPUTER / LOCALHOST:
+============================================================
+Ganti "172.20.10.2:8000" dengan "localhost:8000" atau "127.0.0.1:8000"
+Contoh Meja 01: http://localhost:8000/m/qr-meja-01
+Contoh Meja 17: http://localhost:8000/m/qr-meja-17
+Contoh Meja 50: http://localhost:8000/m/qr-meja-50
