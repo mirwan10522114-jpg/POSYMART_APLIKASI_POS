@@ -1,66 +1,91 @@
-# PosyMart — Aplikasi Point of Sale (Laravel 13)
+# PosyMart
 
-PosyMart adalah aplikasi kasir (POS) yang dibangun dengan **Laravel 13, Blade, Tailwind CSS 4, Alpine.js, dan Chart.js**. Seluruh antarmuka berbahasa Indonesia dengan mata uang Rupiah dan zona waktu Asia/Jakarta.
+PosyMart adalah aplikasi **point of sale (POS) dan pemesanan meja untuk kafe**. Staf dapat mengelola penjualan, produk, stok, pelanggan, pesanan, retur, dan laporan dalam satu dasbor. Pelanggan dapat membuka menu dan memesan melalui portal atau kode QR meja.
 
-## Fitur
+Aplikasi ini dibangun dengan Laravel 13, Blade, Alpine.js, Tailwind CSS 4, dan Chart.js. Antarmuka menggunakan bahasa Indonesia, mata uang Rupiah, dan zona waktu Asia/Jakarta.
 
-- **10 halaman lengkap**: Dasbor, Penjualan, Produk, Pelanggan, Pesanan, Laporan, Retur, Diskon, Pengguna, Pengaturan
-- **Dasbor POS**: katalog produk dengan foto nyata, filter kategori, pencarian, keranjang Penjualan Saat Ini, catatan, diskon per penjualan, dan simulasi pembayaran (tunai + kembalian, kartu, dompet digital)
-- **Ledger demo konsisten**: 56 transaksi seed (6 hari ini + 6 arsip + 44 historis deterministik) yang menjadi dasar statistik Penjualan dan Laporan
-- **Alur pesanan**: Draf → Menunggu → Disiapkan → Siap → Selesaikan & Bayar (membuat tepat satu transaksi penjualan)
-- **Retur 3 langkah**: cari transaksi → pilih item dengan alokasi refund per unit (largest remainder) → tinjau → setujui/tolak
-- **Diskon**: 7 promo seed, status efektif otomatis (Aktif/Terjadwal/Draf/Kedaluwarsa/Nonaktif/Habis), validasi kode unik
-- **Laporan Chart.js**: tren penjualan (garis), rincian pembayaran (donat), pesanan selesai (batang), ringkasan harian + ekspor CSV + cetak
-- **Pengguna & izin demo**: 3 peran (Admin/Manager/Cashier) dengan pratinjau izin, proteksi akun current & Admin terakhir
-- **Pengaturan 7 tab**: Umum, Toko, Pembayaran, Pajak, Struk (dengan pratinjau langsung), Notifikasi, Tampilan + reset data demo
-- **Responsif**: desktop (1440px) → tablet → ponsel (hingga 320px) tanpa overflow horizontal
-- **Aksesibilitas**: semantic HTML, aria, focus trap pada drawer/dialog, live region, target sentuh ≥44px
+## Fitur utama
 
-## Data Demo
+- **Kasir dan penjualan:** katalog produk, keranjang, diskon, pajak, pembayaran, serta riwayat transaksi.
+- **Pemesanan pelanggan:** portal seluler dan QR per meja, keranjang, checkout, serta pelacakan status pesanan.
+- **Operasional staf:** antrean pesanan, pengelolaan 50 meja dan QR demo, notifikasi, pemantauan pembayaran, dan rekonsiliasi.
+- **Inventaris dan pelanggan:** pengelolaan produk, penyesuaian stok, riwayat pergerakan stok, serta data pelanggan.
+- **Retur dan refund:** pengajuan, persetujuan, dan pencatatan pengembalian dana.
+- **Laporan:** ringkasan penjualan, tren pendapatan, metode pembayaran, produk terlaris, grafik interaktif, dan ekspor CSV.
+- **Akses staf:** login, peran Admin/Manager/Cashier, dan API versi 1 dengan autentikasi Laravel Sanctum.
 
-Seluruh data dikelola di sisi klien (Alpine.js + LocalStorage, key `posymart-demo-v1`) — tanpa database transaksi nyata, autentikasi server, atau payment gateway. Jam demo dibekukan pada **10 Okt 2026, 14.00 WIB**. Pajak 8% hanyalah konfigurasi contoh, bukan ketentuan pajak resmi.
+## Teknologi
 
-Reset seluruh data demo: **Pengaturan → Tampilan → Reset semua data demo**.
+| Bagian | Teknologi |
+| --- | --- |
+| Backend | PHP 8.3+, Laravel 13, Laravel Sanctum |
+| Frontend | Blade, JavaScript, Alpine.js, Tailwind CSS 4, Chart.js |
+| Database | SQLite secara default melalui `.env.example` |
+| Build | Vite, npm |
+| QR | `chillerlan/php-qrcode` dan `qrcode` |
 
-## Menjalankan Aplikasi
+## Menjalankan secara lokal
+
+Pastikan PHP 8.3+, Composer, dan Node.js/npm tersedia. Jalankan perintah berikut dari direktori proyek:
 
 ```bash
-# 1) Dependensi PHP
 composer install
+npm ci
+```
 
-# 2) Dependensi frontend + build aset
-npm install
-npm run build
+Salin `.env.example` menjadi `.env`, lalu siapkan aplikasi dan database SQLite:
 
-# 3) Konfigurasi
-cp .env.example .env
+```bash
+php -r "file_exists('.env') || copy('.env.example', '.env');"
 php artisan key:generate
-
-# 4) Jalankan server dev
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
+php artisan migrate --seed
+npm run build
 php artisan serve
-# buka http://localhost:8000 — otomatis dialihkan ke /dashboard
 ```
 
-Untuk pengembangan frontend dengan hot-reload: `npm run dev` (Vite) bersamaan dengan `php artisan serve`.
+Buka `http://127.0.0.1:8000/login` untuk staf. Portal pelanggan tersedia di `http://127.0.0.1:8000/order`. Setelah database di-seed, contoh halaman QR meja adalah `http://127.0.0.1:8000/m/qr-meja-01`.
 
-## Struktur Utama
+Untuk mengembangkan antarmuka dengan hot reload, jalankan `npm run dev` di terminal lain saat server Laravel aktif. Jika port 8000 sudah dipakai, pilih port lain dengan `php artisan serve --port=8001` dan sesuaikan URL.
 
+### Akun demo
+
+Seeder membuat akun berikut dengan kata sandi `posymart-demo`:
+
+| Peran | Email |
+| --- | --- |
+| Admin | `john.doe@example.com` |
+| Manager | `avery.morgan@example.com` |
+| Cashier | `jordan.lee@example.com` |
+
+Akun dan kata sandi tersebut hanya untuk lingkungan demo. Kode saat ini juga memuat jalur login dengan kata sandi demo, sehingga aplikasi perlu ditinjau dan diperkuat sebelum digunakan di produksi.
+
+## Alur singkat
+
+1. Staf login, membuka dasbor, lalu mengelola produk dan transaksi di halaman kasir.
+2. Pelanggan membuka `/order` atau memindai QR meja untuk memilih menu dan mengirim pesanan.
+3. Staf memantau antrean pesanan, pembayaran, dan notifikasi dari dasbor.
+4. Admin atau Manager dapat meninjau laporan, retur, dan refund sesuai hak aksesnya.
+
+## API dan struktur proyek
+
+Endpoint JSON berada di `/api/v1`. Rute mencakup autentikasi, produk, pelanggan, penjualan, pesanan, retur, diskon, laporan, pengaturan, inventaris, pemesanan meja, dan webhook pembayaran. Lihat [`routes/api.php`](routes/api.php) untuk daftar endpoint dan [`PosyMart-Backend-PRD.md`](PosyMart-Backend-PRD.md) untuk spesifikasi backend.
+
+```text
+app/Http/Controllers/Api/v1/  Controller REST API
+app/Models/                   Model Eloquent
+app/Services/                 Perhitungan uang, audit, dan alur pembayaran
+database/migrations/          Skema database
+database/seeders/             Data demo staf, produk, transaksi, dan meja
+resources/views/              Halaman Blade staf dan pelanggan
+resources/js/                 Komponen Alpine.js dan state antarmuka
+routes/web.php                Rute halaman web
+routes/api.php                Rute API v1
+tests/                        Pengujian aplikasi
 ```
-resources/
-├── css/app.css              # Design tokens Tailwind 4 (@theme) + komponen
-├── js/
-│   ├── app.js               # Entry Alpine + shell + helper PM (focus trap, fallback gambar)
-│   ├── data/seed.js         # Seed deterministik seluruh modul (Rupiah integer)
-│   ├── store/store.js       # Store global + persistensi LocalStorage + semua aksi
-│   ├── utils/               # money (alokasi pajak/diskon), date (id-ID), files (CSV/struk)
-│   └── pages/               # Komponen Alpine per halaman (10 file)
-└── views/
-    ├── layouts/app.blade.php    # Shell: sidebar teal, header, drawer, toast, live region
-    ├── layouts/partials/header  # Search ⌘K, notifikasi (badge 3), keranjang (badge 2)
-    ├── components/              # icon (Lucide inline), page-header, stat-card, pagination
-    └── pages/                   # 10 halaman + 404
-```
 
-## Catatan Konversi Lokalisasi
+## Pengujian dan batasan demo
 
-Fixture desain memakai USD; implementasi ini mengonversi **1 sen USD ≈ Rp100** (Cappuccino $3.50 → Rp35.000). Semua perhitungan memakai integer Rupiah dengan pembulatan half-up pada level Rupiah, sehingga identitas akuntansi tetap konsisten (contoh: Penjualan Neto + Pajak Neto = Neto Terkumpul).
+Jalankan pengujian dengan `php artisan test`. Sebagian state antarmuka masih menggunakan `localStorage` dan disinkronkan dengan API pada modul tertentu. Alur QRIS di `PaymentProviderService` menggunakan provider **simulasi** (`qris_simulated`); proyek ini belum terhubung ke gateway pembayaran produksi.
+
+Jangan commit `.env` atau file database lokal. Keduanya sudah dikecualikan melalui `.gitignore`.
