@@ -1,13 +1,13 @@
 # PosyMart
 
-PosyMart adalah aplikasi **point of sale (POS) dan pemesanan meja untuk kafe**. Staf dapat mengelola penjualan, produk, stok, pelanggan, pesanan, retur, dan laporan dalam satu dasbor. Pelanggan dapat membuka menu dan memesan melalui portal atau kode QR meja.
+PosyMart adalah aplikasi **point of sale (POS) dan pemesanan meja untuk kafe**. Staf dapat mengelola penjualan, produk, stok, pelanggan, pesanan, retur, dan laporan dalam satu dasbor. Pelanggan dapat memindai barcode QR di meja, login atau mendaftar, lalu memesan langsung dari ponsel tanpa perlu mengantre di kasir.
 
 Aplikasi ini dibangun dengan Laravel 13, Blade, Alpine.js, Tailwind CSS 4, dan Chart.js. Antarmuka menggunakan bahasa Indonesia, mata uang Rupiah, dan zona waktu Asia/Jakarta.
 
 ## Fitur utama
 
 - **Kasir dan penjualan:** katalog produk, keranjang, diskon, pajak, pembayaran, serta riwayat transaksi.
-- **Pemesanan pelanggan:** portal seluler dan QR per meja, keranjang, checkout, serta pelacakan status pesanan.
+- **Pemesanan pelanggan:** barcode QR per meja membuka portal seluler, lalu pelanggan login atau mendaftar sebelum memilih menu, checkout, dan memantau status pesanan.
 - **Operasional staf:** antrean pesanan, pengelolaan 50 meja dan QR demo, notifikasi, pemantauan pembayaran, dan rekonsiliasi.
 - **Inventaris dan pelanggan:** pengelolaan produk, penyesuaian stok, riwayat pergerakan stok, serta data pelanggan.
 - **Retur dan refund:** pengajuan, persetujuan, dan pencatatan pengembalian dana.
@@ -63,9 +63,10 @@ Akun dan kata sandi tersebut hanya untuk lingkungan demo. Kode saat ini juga mem
 ## Alur singkat
 
 1. Staf login, membuka dasbor, lalu mengelola produk dan transaksi di halaman kasir.
-2. Pelanggan membuka `/order` atau memindai QR meja untuk memilih menu dan mengirim pesanan.
-3. Staf memantau antrean pesanan, pembayaran, dan notifikasi dari dasbor.
-4. Admin atau Manager dapat meninjau laporan, retur, dan refund sesuai hak aksesnya.
+2. Pelanggan memindai barcode QR yang terpasang di meja. Tautan QR membuka halaman pemesanan untuk meja tersebut; portal umum juga tersedia di `/order`.
+3. Pelanggan login atau mendaftar, memilih menu, lalu mengirim pesanan dari ponsel tanpa mengantre di kasir.
+4. Staf menerima dan memproses pesanan, serta memantau pembayaran dan notifikasi dari dasbor.
+5. Admin atau Manager dapat meninjau laporan, retur, dan refund sesuai hak aksesnya.
 
 ## API dan struktur proyek
 
